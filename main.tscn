@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://n4idbfjqhp13"]
+
+[ext_resource type="Script" uid="uid://dlqagamwmx45y" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+metadata/_edit_horizontal_guides_ = [-174.0]
+
+[node name="GameUI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -701.0
+offset_bottom = -488.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsRow" type="HBoxContainer" parent="GameUI"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="GameUI/StatsRow"]
+layout_mode = 2
+text = "Money: $1000"
+
+[node name="VSeparator" type="VSeparator" parent="GameUI/StatsRow"]
+layout_mode = 2
+
+[node name="EfficiencyLabel" type="Label" parent="GameUI/StatsRow"]
+layout_mode = 2
+text = "Efficiency: 1.0"
+
+[node name="UpgradeEfficiencyBtn" type="Button" parent="GameUI/StatsRow"]
+layout_mode = 2
+text = "Upgrade Efficiency ($100)"
+
+[node name="HSeparator" type="HSeparator" parent="GameUI"]
+layout_mode = 2
+
+[node name="BuildingRow" type="HBoxContainer" parent="GameUI"]
+layout_mode = 2
+
+[node name="ComponentsBox" type="VBoxContainer" parent="GameUI/BuildingRow"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameUI/BuildingRow/ComponentsBox"]
+layout_mode = 2
+text = "Select Components:"
+
+[node name="ComponentOption" type="OptionButton" parent="GameUI/BuildingRow/ComponentsBox"]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "Basic Parts (Quality 1) - $10"
+popup/item_0/id = 0
+popup/item_1/text = "Good Parts (Quality 2) - $25"
+popup/item_1/id = 1
+popup/item_2/text = "Great Parts (Quality 3) - $50"
+popup/item_2/id = 2
+popup/item_3/text = "Premium Parts (Quality 4) - $100"
+popup/item_3/id = 3
+popup/item_4/text = "Luxury Parts (Quality 5) - $200"
+popup/item_4/id = 4
+
+[node name="VSeparator" type="VSeparator" parent="GameUI/BuildingRow"]
+layout_mode = 2
+
+[node name="BuildBox" type="VBoxContainer" parent="GameUI/BuildingRow"]
+layout_mode = 2
+
+[node name="BuildBtn" type="Button" parent="GameUI/BuildingRow/BuildBox"]
+layout_mode = 2
+text = "Build Widget"
+
+[node name="BuildProgress" type="ProgressBar" parent="GameUI/BuildingRow/BuildBox"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="GameUI"]
+layout_mode = 2
+
+[node name="InfoRow" type="HBoxContainer" parent="GameUI"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="GameUI/InfoRow"]
+layout_mode = 2
+text = "Ready to build!"

@@ -1,0 +1,42 @@
+# Godot 4+ specific ignores
+.godot/
+.import/
+
+# Export folders
+/android/
+/ios/
+/linux/
+/macos/
+/web/
+/windows/
+
+# Export presets and configuration
+export_presets.cfg
+export.cfg
+
+# Imported translations
+*.translation
+
+# Mono-specific ignores (if using C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/Editor specific
+.vscode/
+.idea/
+*.tmp
+*.temp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# User-specific save data (optional - you might want to keep test saves)
+# *.save
