@@ -13,50 +13,52 @@ grow_vertical = 2
 script = ExtResource("1_ig7tw")
 metadata/_edit_horizontal_guides_ = [-174.0]
 
-[node name="GameUI" type="VBoxContainer" parent="."]
+[node name="MainLayout" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -701.0
-offset_bottom = -488.0
+offset_left = 0.975
+offset_right = 0.974976
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
-[node name="StatsRow" type="HBoxContainer" parent="GameUI"]
+[node name="GameUI" type="VBoxContainer" parent="MainLayout"]
 layout_mode = 2
 
-[node name="MoneyLabel" type="Label" parent="GameUI/StatsRow"]
+[node name="StatsRow" type="HBoxContainer" parent="MainLayout/GameUI"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="MainLayout/GameUI/StatsRow"]
 layout_mode = 2
 text = "Money: $1000"
 
-[node name="VSeparator" type="VSeparator" parent="GameUI/StatsRow"]
+[node name="VSeparator" type="VSeparator" parent="MainLayout/GameUI/StatsRow"]
 layout_mode = 2
 
-[node name="EfficiencyLabel" type="Label" parent="GameUI/StatsRow"]
+[node name="EfficiencyLabel" type="Label" parent="MainLayout/GameUI/StatsRow"]
 layout_mode = 2
 text = "Efficiency: 1.0"
 
-[node name="UpgradeEfficiencyBtn" type="Button" parent="GameUI/StatsRow"]
+[node name="UpgradeEfficiencyBtn" type="Button" parent="MainLayout/GameUI/StatsRow"]
 layout_mode = 2
 text = "Upgrade Efficiency ($100)"
 
-[node name="HSeparator" type="HSeparator" parent="GameUI"]
+[node name="HSeparator" type="HSeparator" parent="MainLayout/GameUI"]
 layout_mode = 2
 
-[node name="BuildingRow" type="HBoxContainer" parent="GameUI"]
+[node name="BuildingRow" type="HBoxContainer" parent="MainLayout/GameUI"]
 layout_mode = 2
 
-[node name="ComponentsBox" type="VBoxContainer" parent="GameUI/BuildingRow"]
+[node name="ComponentsBox" type="VBoxContainer" parent="MainLayout/GameUI/BuildingRow"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GameUI/BuildingRow/ComponentsBox"]
+[node name="Label" type="Label" parent="MainLayout/GameUI/BuildingRow/ComponentsBox"]
 layout_mode = 2
 text = "Select Components:"
 
-[node name="ComponentOption" type="OptionButton" parent="GameUI/BuildingRow/ComponentsBox"]
+[node name="ComponentOption" type="OptionButton" parent="MainLayout/GameUI/BuildingRow/ComponentsBox"]
 layout_mode = 2
 item_count = 5
 popup/item_0/text = "Basic Parts (Quality 1) - $10"
@@ -70,25 +72,60 @@ popup/item_3/id = 3
 popup/item_4/text = "Luxury Parts (Quality 5) - $200"
 popup/item_4/id = 4
 
-[node name="VSeparator" type="VSeparator" parent="GameUI/BuildingRow"]
+[node name="VSeparator" type="VSeparator" parent="MainLayout/GameUI/BuildingRow"]
 layout_mode = 2
 
-[node name="BuildBox" type="VBoxContainer" parent="GameUI/BuildingRow"]
+[node name="BuildBox" type="VBoxContainer" parent="MainLayout/GameUI/BuildingRow"]
 layout_mode = 2
 
-[node name="BuildBtn" type="Button" parent="GameUI/BuildingRow/BuildBox"]
+[node name="BuildBtn" type="Button" parent="MainLayout/GameUI/BuildingRow/BuildBox"]
 layout_mode = 2
 text = "Build Widget"
 
-[node name="BuildProgress" type="ProgressBar" parent="GameUI/BuildingRow/BuildBox"]
+[node name="BuildProgress" type="ProgressBar" parent="MainLayout/GameUI/BuildingRow/BuildBox"]
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="GameUI"]
+[node name="HSeparator2" type="HSeparator" parent="MainLayout/GameUI"]
 layout_mode = 2
 
-[node name="InfoRow" type="HBoxContainer" parent="GameUI"]
+[node name="InfoRow" type="HBoxContainer" parent="MainLayout/GameUI"]
 layout_mode = 2
 
-[node name="StatusLabel" type="Label" parent="GameUI/InfoRow"]
+[node name="StatusLabel" type="Label" parent="MainLayout/GameUI/InfoRow"]
 layout_mode = 2
 text = "Ready to build!"
+
+[node name="QualityPanel" type="VBoxContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+
+[node name="QualityLabel" type="Label" parent="MainLayout/QualityPanel"]
+layout_mode = 2
+text = "Build Quality:"
+
+[node name="QualityButtons" type="VBoxContainer" parent="MainLayout/QualityPanel"]
+layout_mode = 2
+
+[node name="RushBtn" type="Button" parent="MainLayout/QualityPanel/QualityButtons"]
+layout_mode = 2
+text = "🏃 Rush
+-50% Time
+-30% Price"
+
+[node name="NormalBtn" type="Button" parent="MainLayout/QualityPanel/QualityButtons"]
+layout_mode = 2
+text = "⚡ Normal
+Base Speed
+Base Price"
+
+[node name="CarefulBtn" type="Button" parent="MainLayout/QualityPanel/QualityButtons"]
+layout_mode = 2
+text = "🎯 Careful
++50% Time
++25% Price"
+
+[node name="PerfectBtn" type="Button" parent="MainLayout/QualityPanel/QualityButtons"]
+layout_mode = 2
+text = "💎 Perfect
++100% Time
++60% Price"
