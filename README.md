@@ -68,7 +68,7 @@ An incremental office management game built in Godot 4.4.1 where players build w
 ## 🚀 How to Run
 
 1. **Install Godot 4.4.1** from [godotengine.org](https://godotengine.org/download)
-2. **Clone this repository**: `git clone https://github.com/YOUR_USERNAME/idle-office-game.git`
+2. **Clone this repository**: `git clone https://github.com/andrewtyree/idle-office-game.git`
 3. **Open project in Godot**: Import the project folder
 4. **Run the game**: Press F5 or click the play button
 5. **Main scene**: Ensure `Main.tscn` is set as the main scene
